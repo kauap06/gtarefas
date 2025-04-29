@@ -1,0 +1,80 @@
+body {
+    background-color: #f8f9fa; /* Cinza claro de fundo */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; /* Faz o container crescer para preencher o espaço até o footer */
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.kanban-column .card-body {
+    min-height: 400px; /* Altura mínima para as colunas do Kanban */
+    max-height: 70vh; /* Altura máxima com scroll */
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+    background-color: #e9ecef; /* Fundo levemente diferente para as colunas */
+    border-radius: 0 0 .25rem .25rem; /* Arredonda cantos inferiores */
+    padding: 1rem;
+}
+
+.kanban-column .card-header {
+    font-weight: bold;
+}
+
+.task-card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: box-shadow 0.2s ease-in-out;
+    border: 1px solid #dee2e6; /* Borda sutil */
+}
+
+.task-card:hover {
+     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos opcionais para destacar prioridade visualmente */
+.task-card.priority-alta {
+    border-left: 5px solid #dc3545; /* Vermelho */
+}
+.task-card.priority-media {
+    border-left: 5px solid #ffc107; /* Amarelo */
+}
+.task-card.priority-baixa {
+    border-left: 5px solid #198754; /* Verde */
+}
+
+.task-card h5 {
+    margin-bottom: 0.5rem;
+}
+
+.task-card .card-text small {
+    color: #6c757d !important; /* Garante cor do texto muted */
+    display: block; /* Garante quebra de linha */
+    line-height: 1.4;
+}
+
+.task-card .btn-sm {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+/* Ajustes para responsividade do Kanban */
+@media (max-width: 767px) {
+    .kanban-column {
+        margin-bottom: 1.5rem; /* Espaçamento entre colunas em telas pequenas */
+    }
+    .kanban-column .card-body {
+        max-height: none; /* Remove altura máxima em telas pequenas */
+        min-height: 200px;
+    }
+}
+
+footer {
+    background-color: #e9ecef !important; /* Cor do footer */
+    border-top: 1px solid #dee2e6;
+}

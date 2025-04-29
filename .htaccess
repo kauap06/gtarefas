@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /gerenciador-tarefas/
+
+# Redireciona o acesso à raiz para a página home
+RewriteRule ^$ index.php?pagina=home [L,QSA]
+
+# Não aplica regras a arquivos e diretórios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redireciona URLs como /pagina para index.php?pagina=pagina
+RewriteRule ^([a-z_]+)/?$ index.php?pagina=$1 [L,QSA]
